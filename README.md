@@ -8,6 +8,7 @@ This image is based on Alpine Linux image and contains Nginx+ and the following 
  - module-geoip 
  - module-image-filter 
  - module-perl
+ - module-opentracing
  - jaeger tracing library (v0.8.0)
  - zipkin tracing library (v0.5.2)
 
