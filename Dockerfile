@@ -26,7 +26,7 @@ COPY --from=builder /libzipkin_opentracing_plugin.so /usr/local/lib/libzipkin_op
 RUN set -x \
     && addgroup -g 101 -S nginx \
     && adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx \
-    && nginxPackages="nginx-plus nginx-plus-module-njs nginx-plus-module-lua nginx-plus-module-xslt nginx-plus-module-geoip nginx-plus-module-image-filter nginx-plus-module-perl nginx-plus-module-opentracing" \
+    && nginxPackages="nginx-plus nginx-plus-module-njs nginx-plus-module-lua nginx-plus-module-xslt nginx-plus-module-geoip nginx-plus-module-image-filter nginx-plus-module-perl nginx-plus-module-prometheus nginx-plus-module-headers-more nginx-plus-module-opentracing" \
     KEY_SHA512="e7fa8303923d9b95db37a77ad46c68fd4755ff935d0a534d26eba83de193c76166c68bfe7f65471bf8881004ef4aa6df3e34689c305662750c0172fca5d8552a *stdin" \
     && apk add --no-cache --virtual .cert-deps openssl git cmake \
     && wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub \
